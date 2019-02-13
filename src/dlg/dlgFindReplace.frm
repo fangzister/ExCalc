@@ -1428,7 +1428,8 @@ Private Sub cmdNumberInc_Click()
         SingletonFSO
         For i = 0 To UBound(p)
             If Len(p(i)) > 0 Then
-                p(i) = ReplaceFilenameAs(p(i), NumberInc(objFso.GetBaseName(p(i)), nStartIndex, nIncCount, nZeroize))
+                '不检查文件是否存在
+                p(i) = ReplaceFilenameAs(p(i), NumberInc(objFso.GetBaseName(p(i)), nStartIndex, nIncCount, nZeroize), False)
             End If
         Next
     Else
